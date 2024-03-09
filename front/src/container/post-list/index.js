@@ -47,15 +47,21 @@ export default function Container() {
         isEmpty: raw.list.length === 0,
     });
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     getData();
+
+    //     const intervalId = setInterval(() => getData(), 5000);
+
+    //     return () =>  {
+    //         clearInterval(intervalId);
+    //     };
+    // }, []);
+
+    if (status === null) {
         getData();
+    }
 
-        const intervalId = setInterval(() => getData(), 5000);
 
-        return () =>  {
-            clearInterval(intervalId);
-        };
-    }, []);
 
     return (
         <Grid>
